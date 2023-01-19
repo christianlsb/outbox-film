@@ -9,5 +9,7 @@ export const themes = {
     fontWeight: {},
 
 
-    fontSize: {}
+    fontSize: {
+        
+    }
 }

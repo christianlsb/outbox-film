@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./styles";
+import { HiSearch } from "react-icons/hi";
 
 export function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +23,7 @@ export function SearchBar() {
           value={searchTerm}
           onChange={handleChange}
         />
-        <S.Button type="submit">Search</S.Button>
+        <S.Button type="submit"><HiSearch/></S.Button>
       </S.FormStyled>
     </S.SearchContainer>
   );

@@ -4,6 +4,8 @@ export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0px 0 50px 0;
+  padding-top: 50px;
 `;
 
 export const FormStyled = styled.form``;
