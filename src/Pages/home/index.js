@@ -13,7 +13,7 @@ export default function Home() {
         params: {
           api_key: "86da2cf4cf000ed3bc664a7dd307a24b",
           language: "pt-BR",
-          page: 1,
+          page: 2,
         },
       });
       setFilmes(response.data.results);
