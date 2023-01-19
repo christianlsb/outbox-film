@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { themes } from "../../styles/theme";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
     display: flex;
     width: 100%;
     height: 60px;
