@@ -3,7 +3,6 @@ import { themes } from "../../styles/theme";
 
 export const Container = styled.div`
   background-color: ${themes.color.gray_800};
-  
   `;
 
 export const ContainerFilm = styled.div`

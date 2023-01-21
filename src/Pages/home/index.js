@@ -22,14 +22,7 @@ export default function Home() {
     setLoading(false);
   }, []);
 
-  if (loading) {
-    return (
-      <div className="loading">
-        <h2>Carregando filmes...</h2>
-      </div>
-    );
-  }
-
+  
   return (
     <>
       <S.Container>
