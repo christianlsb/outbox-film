@@ -1,30 +1,21 @@
 import React, { useState } from "react";
 import * as S from "./styles";
-import { HiSearch } from "react-icons/hi";
 
-export function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Searching for: ${searchTerm}`);
-  };
+export function SearchBar({value, onChange}) {
+function handleChange(event){
+  onChange(event.target.value)
+}  
 
   return (
     <S.SearchContainer>
-      <S.FormStyled onSubmit={handleSubmit}>
         <S.Input
           type="text"
           placeholder="Search..."
-          value={searchTerm}
+          value={value}
           onChange={handleChange}
         />
-        <S.Button type="submit"><HiSearch/></S.Button>
-      </S.FormStyled>
     </S.SearchContainer>
   );
 }

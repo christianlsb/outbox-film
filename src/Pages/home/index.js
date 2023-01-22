@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import api from "../../Services/api";
 import { SearchBar } from "../../components/Search";
-import { Link } from "react-router-dom";
+
 
 export default function Home() {
   const [filmes, setFilmes] = useState([]);
@@ -21,11 +21,19 @@ export default function Home() {
     loadFilmes();
   }, []);
 
-  
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+     if(text){
+      fetch('movie/now_playing?api_key=86da2cf4cf000ed3bc664a7dd307a24b&language=pt-BR')
+     }
+
+  }, [text]);
+
   return (
     <>
       <S.Container>
-        <SearchBar />
+        <SearchBar value={text} onChange={(search) => setText(search)} />
         <S.ContainerFilm>
           <div>
             {filmes.map((filme) => {
