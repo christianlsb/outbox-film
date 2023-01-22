@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import api from "../../Services/api";
 import { SearchBar } from "../../components/Search";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [filmes, setFilmes] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadFilmes() {
@@ -19,7 +19,6 @@ export default function Home() {
       setFilmes(response.data.results);
     }
     loadFilmes();
-    setLoading(false);
   }, []);
 
   
@@ -37,7 +36,7 @@ export default function Home() {
                     src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
                     alt={filme.title}
                   />
-                  <S.Link to={`/filme/${filme.id}`}>Acessar</S.Link>
+                  <S.LinkFilm to={`/film/${filme.id}`}>Acessar</S.LinkFilm>
                 </S.Article>
               );
             })}
